@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "total_lines": 0,
+  "knowledge_points": [],
+  "coverage": [
+    {"name": "test", "status": "invalid_status", "note": "非法枚举值"}
+  ],
+  "suspicions": []
+}

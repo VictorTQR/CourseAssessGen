@@ -1,0 +1,19 @@
+{
+  "files": [
+    {"path": "main.js", "lines": 9, "description": "应用入口，挂载 Vue 实例"},
+    {"path": "App.vue", "lines": 10, "description": "根组件，含 router-view"},
+    {"path": "stores/todo.js", "lines": 22, "description": "Pinia 状态管理"},
+    {"path": "utils/request.js", "lines": 14, "description": "axios 封装与拦截器"}
+  ],
+  "total_lines": 55,
+  "knowledge_points": ["Vue Router", "Pinia", "Composition API", "axios"],
+  "coverage": [
+    {"name": "Vue Router", "status": "confirmed", "note": "main.js 正确注册 router"},
+    {"name": "Pinia 状态管理", "status": "confirmed", "note": "stores/todo.js 使用 defineStore 组合式写法"},
+    {"name": "Composition API", "status": "confirmed", "note": "使用 ref/computed"},
+    {"name": "axios 拦截器", "status": "suspicious", "note": "封装完整，可能超出课程范围"}
+  ],
+  "suspicions": [
+    {"kind": "out_of_scope", "location": "utils/request.js", "description": "封装了完整 axios 拦截器，若课程未涉及则属超纲"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "l1": [
+    {"code_location": "main.js", "text": "项目启动时做了哪些初始化？数据流从哪开始？"},
+    {"code_location": "stores/todo.js:7", "text": "defineStore 做了什么？这个 store 管理了哪些状态？"}
+  ],
+  "l2": [
+    {"code_location": "stores/todo.js", "text": "你用 Pinia 管理待办列表，为什么不用 props/emit？对这个项目哪个更合适？"},
+    {"code_location": "utils/request.js:8", "text": "拦截器里加 token 是为什么？token 的作用是什么？"}
+  ],
+  "l3": [
+    {"code_location": "main.js:6", "text": "如果把 app.use(router) 这行删掉，访问 / 路由会怎样？"},
+    {"code_location": "stores/todo.js", "text": "如果需求改为每个 Todo 支持优先级并按优先级排序，你要改哪几个文件？分别改什么？"}
+  ]
+}
