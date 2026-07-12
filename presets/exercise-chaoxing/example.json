@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "source_lesson": "Python变量与数据类型",
+    "generated_at": "2026-06-20",
+    "total": 7
+  },
+  "exercises": [
+    {
+      "id": "Q1",
+      "type": "single_choice",
+      "stem": "下列哪个是合法的 Python 变量名？",
+      "options": ["1name", "_name", "name-1", "class"],
+      "answer": ["B"],
+      "explanation": "变量名不能以数字开头、不能含连字符、不能用关键字 class。",
+      "difficulty": "easy",
+      "knowledge_points": ["变量命名规则"],
+      "tags": ["课堂"],
+      "scene": "classroom"
+    },
+    {
+      "id": "Q2",
+      "type": "multiple_choice",
+      "stem": "下列哪些是 Python 的基本数据类型？",
+      "options": ["int", "str", "array", "bool"],
+      "answer": ["A", "B", "D"],
+      "explanation": "int、str、bool 是基本类型，array 不是 Python 内置基本类型。",
+      "difficulty": "medium",
+      "knowledge_points": ["基本数据类型"],
+      "tags": ["课堂"],
+      "scene": "classroom"
+    },
+    {
+      "id": "Q3",
+      "type": "fill_blank",
+      "stem": "在 Python 中，使用 ___ 函数可以查看变量的数据类型。",
+      "answer": ["type"],
+      "explanation": "type() 返回对象的类型。",
+      "difficulty": "easy",
+      "knowledge_points": ["type函数"],
+      "tags": ["课堂"],
+      "scene": "classroom"
+    },
+    {
+      "id": "Q4",
+      "type": "true_false",
+      "stem": "Python 是动态类型语言，同一变量可以先后存储不同类型的数据。",
+      "options": ["正确", "错误"],
+      "answer": ["A"],
+      "explanation": "动态类型是 Python 的特性之一。",
+      "difficulty": "easy",
+      "knowledge_points": ["动态类型"],
+      "tags": ["课堂"],
+      "scene": "classroom"
+    },
+    {
+      "id": "Q5",
+      "type": "short_answer",
+      "stem": "简述 Python 变量命名的主要规则。",
+      "answer": ["变量名只能由字母、数字、下划线组成；不能以数字开头；不能使用关键字；区分大小写；建议见名知意。"],
+      "explanation": "命名规范是编程基础。",
+      "difficulty": "medium",
+      "knowledge_points": ["变量命名规则"],
+      "tags": ["课后"],
+      "scene": "after_class"
+    },
+    {
+      "id": "Q6",
+      "type": "reading_comprehension",
+      "stem": "阅读以下代码片段，回答后面的问题：\n\n```python\nx = 10\ny = 3.14\nname = 'Python'\nflag = True\nprint(type(x))\nprint(type(y))\n```",
+      "sub_questions": [
+        {
+          "id": "Q6.1",
+          "type": "single_choice",
+          "stem": "type(x) 的输出结果是？",
+          "options": ["<class 'int'>", "<class 'float'>", "<class 'str'>", "<class 'bool'>"],
+          "answer": ["A"],
+          "explanation": "x = 10 是整型。"
+        },
+        {
+          "id": "Q6.2",
+          "type": "true_false",
+          "stem": "type(y) 的输出是 <class 'int'>。",
+          "options": ["正确", "错误"],
+          "answer": ["B"],
+          "explanation": "y = 3.14 是 float。"
+        },
+        {
+          "id": "Q6.3",
+          "type": "fill_blank",
+          "stem": "type(name) 的输出中，类名是 ___",
+          "answer": ["str"],
+          "explanation": "name 是字符串。"
+        }
+      ],
+      "difficulty": "medium",
+      "knowledge_points": ["type函数", "基本数据类型"],
+      "tags": ["课后"],
+      "scene": "after_class"
+    }
+  ]
+}

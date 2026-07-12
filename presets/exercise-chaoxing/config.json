@@ -1,0 +1,45 @@
+{
+  "name": "exercise-chaoxing",
+  "description": "超星学习通题库导入格式（支持单选/多选/填空/判断/简答/阅读理解 6 种题型）",
+  "doc_type": "exercise-import",
+  "engine": "chaoxing-xlsx",
+  "template_file": null,
+  "example_file": "example.json",
+  "required_fields": ["exercises"],
+  "generate_rules": "生成课堂练习和课后习题两类。题型从以下选择：single_choice、multiple_choice、fill_blank、true_false、short_answer、reading_comprehension。课堂题偏基础概念验证，课后题偏综合应用。每题必须包含 id、type、stem、answer、difficulty、scene 字段。选择题必须提供 options（2-8 个）。判断题 options 固定为 [\"正确\",\"错误\"]，answer 用 [\"A\"] 或 [\"B\"]。填空题 answer 是各空答案数组，无 options。简答题 answer 是 [\"答案全文\"]，无 options。阅读理解必须包含 sub_questions 数组，每个小题是独立题型（不再嵌套），大题的 difficulty/knowledge_points/tags 继承给小题。所有字符串使用中文。id 按顺序编号 Q1、Q2...，阅读理解小题用 Q6.1、Q6.2 格式。默认生成 10 题（课堂 5、课后 5）。课堂题型分布：2 单选 + 1 多选 + 1 判断 + 1 填空。课后题型分布：2 单选 + 1 填空 + 1 简答 + 1 阅读理解（含 3 小题）。难度分布：易 4 题、中 5 题、难 1 题。",
+  "format_spec": {
+    "header_row": 1,
+    "data_start_row": 3,
+    "columns": {
+      "catalog": "A",
+      "question_type": "B",
+      "main_stem": "C",
+      "sub_type": "D",
+      "sub_stem": "E",
+      "answer": "F",
+      "explanation": "G",
+      "difficulty": "H",
+      "knowledge": "I",
+      "tags": "J",
+      "option_count": "K",
+      "options_start": "L",
+      "options_end": "S"
+    },
+    "type_mapping": {
+      "single_choice": "单选题",
+      "multiple_choice": "多选题",
+      "fill_blank": "填空题",
+      "true_false": "判断题",
+      "short_answer": "简答题",
+      "reading_comprehension": "阅读理解"
+    },
+    "difficulty_mapping": {
+      "easy": "易",
+      "medium": "中",
+      "hard": "难"
+    },
+    "default_catalog": "",
+    "true_false_options": ["正确", "错误"],
+    "short_answer_letter": "A"
+  }
+}
