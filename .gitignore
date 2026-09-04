@@ -219,3 +219,9 @@ __marimo__/
 
 # 测试产物
 test_report.md
+
+# 工具默认输出目录（生成的题库/报告）
+output/
+
+# ZCode 会话产物
+.zcode/
