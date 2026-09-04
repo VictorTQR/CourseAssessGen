@@ -29,7 +29,7 @@ OPENAI_API_KEY=你的API密钥
 | 命令 | 用途 |
 |---|---|
 | `cagen code` | 学生代码 -> 答辩问题 + 诊断报告 MD（核心功能） |
-| `cagen exercise` | 教案 JSON -> 题库 JSON（LLM 出题） |
+| `cagen exercise` | 教案 JSON / 授课讲稿 txt -> 题库 JSON（LLM 出题） |
 | `cagen render` | JSON -> 教学文档（xlsx 等） |
 | `cagen validate` | 校验 JSON 文件的 schema |
 | `cagen import` | xlsx -> JSON 互转 |
@@ -84,12 +84,20 @@ cagen code ./student-001/ -c "第6周作业，学过 Vue Router 和 Pinia，要�
 
 ### `cagen exercise`
 
-根据教案 JSON，通过 LLM 生成练习题。
+根据教案 JSON 或授课讲稿（txt/md），通过 LLM 生成练习题。
 
 ```bash
+# 教案 JSON 出题
 cagen exercise lesson-plan.json -p exercise-chaoxing -o exercises.json
+
+# 授课讲稿直接出题（无需先写教案）
+cagen exercise lecture.txt -p exercise-chaoxing -o exercises.json
+
+# 自定义出题侧重
 cagen exercise lesson-plan.json -p exercise-chaoxing --instructions "侧重考察 Pinia 的实际使用场景"
 ```
+
+讲稿文件支持 utf-8 / utf-8（带 BOM）/ gbk 编码，中文内容直接可用。
 
 ### `cagen render`
 

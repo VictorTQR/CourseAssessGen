@@ -52,15 +52,16 @@ def resolve_llm_config(
 
 
 def build_exercise_prompt(
-    content: dict,
     example: dict,
     generate_rules: Optional[str] = None,
     instructions: Optional[str] = None,
+    material_desc: str = "教案 JSON",
+    material_hint: str = "教案包含教学目标、重难点、教学环节等信息，出题应覆盖这些知识点，题目内容要贴合教学实际。",
 ) -> str:
     """构建习题生成的 system prompt。
 
     与 build_system_prompt 平行，但任务语义不同：
-    - 输入是已生成的教案 JSON（content），作为出题素材
+    - 输入是出题素材（教案 JSON 或授课讲稿文本，由 material_desc/hint 描述）
     - 输出是符合 example 结构的 exercises.json
 
     五层结构（优先级从低到高）：
@@ -73,9 +74,9 @@ def build_exercise_prompt(
     example_json = json.dumps(example, ensure_ascii=False, indent=2)
     sections = [
         "你是一名经验丰富的出题专家。",
-        "请根据用户提供的教案 JSON，生成配套的课堂练习和课后习题。",
+        f"请根据用户提供的{material_desc}，生成配套的课堂练习和课后习题。",
         "",
-        "教案包含教学目标、重难点、教学环节等信息，出题应覆盖这些知识点，题目内容要贴合教学实际。",
+        material_hint,
         "",
         "题型与字段规则：",
         "1. type 只能从以下 6 种中选择：single_choice、multiple_choice、fill_blank、true_false、short_answer、reading_comprehension。",
